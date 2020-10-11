@@ -4,6 +4,7 @@ import com.example.taskmanager.model.Task;
 import com.example.taskmanager.model.TaskPriority;
 import com.example.taskmanager.model.TaskStatus;
 import com.example.taskmanager.repository.TaskRepository;
+import com.example.taskmanager.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class TaskController {
+
+
+
     private final TaskRepository taskRepository;
     @Autowired
     public TaskController(TaskRepository taskRepository) {
