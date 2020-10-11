@@ -25,6 +25,15 @@ public class TaskController {
         model.addAttribute("name", name);
         return "task";
     }
+
+    @GetMapping
+    public String saveTask(Model model){
+        Iterable<Task> tasks= taskRepository.findAll();
+        model.addAttribute("tasks",tasks);
+        return "task";
+
+    }
+
     @PostMapping
     public String add(@RequestParam String taskName, @RequestParam String description,
                       @RequestParam TaskPriority taskPriority, @RequestParam TaskStatus taskStatus,
