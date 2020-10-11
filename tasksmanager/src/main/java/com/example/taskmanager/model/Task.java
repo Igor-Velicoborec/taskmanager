@@ -13,12 +13,12 @@ public class Task {
     private long id;
 
 
-    private String TaskName;
+    private String taskName;
 
     private String description;
 
     public Task(String taskName, String description, TaskPriority taskPriority, TaskStatus taskStatus) {
-        TaskName = taskName;
+        this.taskName = taskName;
         this.description = description;
         this.taskPriority = taskPriority;
         this.taskStatus = taskStatus;

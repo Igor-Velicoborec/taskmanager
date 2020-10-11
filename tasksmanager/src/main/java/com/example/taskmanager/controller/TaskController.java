@@ -23,14 +23,14 @@ public class TaskController {
     @GetMapping("/task")
     public String task(@RequestParam(name = "name", required = false, defaultValue = "User") String name, Model model) {
         model.addAttribute("name", name);
-        return "task";
+        return "tasks";
     }
 
     @GetMapping
     public String saveTask(Model model){
         Iterable<Task> tasks= taskRepository.findAll();
         model.addAttribute("tasks",tasks);
-        return "task";
+        return "tasks";
 
     }
 
@@ -42,7 +42,12 @@ public class TaskController {
         taskRepository.save(task);
 
 
-        return "task";
+        return "tasks";
+    }
+    @GetMapping("/all")
+    public String showAll(Model model) {
+        model.addAttribute("tasks", taskRepository.findAll());
+        return "all-tasks";
     }
 
 }
