@@ -1,44 +1,41 @@
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>All Tasks</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-</head>
-<body>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1> Tasks </h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th> TaskName</th>
-                    <th> Description</th>
-                    <th> taskPriority</th>
-                    <th> taskStatus</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:if="${tasks.isEmpty}">
-                    <td colspan="2"> No Task Available</td>
-                </tr>
-                <tr th:each="task : ${tasks}">
-                    <td><span th:text="${task.taskName}"> Name </span></td>
-                    <td><span th:text="${task.description}"> Description </span></td>
-                    <td><span th:text="${task.taskPriority}"> TaskPriority </span></td>
-                    <td><span th:text="${task.taskStatus}"> TaskStatus</span></td>
-                </tr>
-                </tbody>
-            </table>
+<!--<!DOCTYPE HTML>-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml"-->
+<!-- xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <title>All Tasks</title>-->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >-->
+<!--</head>-->
+<!--<body>-->
 
-            <a class="btn btn-success" href="#" th:href="@{/all-tasks.html/create}"> Add Tasks </a>
-            <a class="btn btn-primary" href="#" th:href="@{/all-tasks.html/edit}"
-               th:classappend="${tasks.isEmpty} ? 'disabled' : ''"> Edit Tasks </a>
-        </div>
-    </div>
-</div>
-</body>
-</html>
+<!--</body>-->
+<!--</html><div class="container">-->
+<!--    <div class="row">-->
+<!--        <div class="col-md-12">-->
+<!--            <h1> Tasks </h1>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--        <div class="col-md-6">-->
+<!--            <table class="table">-->
+<!--                <thead>-->
+<!--                <tr>-->
+<!--                    <th> TaskName</th>-->
+<!--                    <th> Description</th>-->
+<!--                    <th> priority</th>-->
+<!--                    <th> status</th>-->
+<!--                </tr>-->
+<!--                </thead>-->
+<!--                <tbody>-->
+
+<!--                <tr th:each="task : ${tasks}">-->
+<!--                    <td> th:text="${task.name}"> Name </td>-->
+<!--                    <td> th:text="${task.description}"> Description </td>-->
+<!--                    <td> th:text="${task.priority}"> TaskPriority </td>-->
+<!--                    <td> th:text="${task.status}"> TaskStatus</td>-->
+<!--                </tr>-->
+<!--                </tbody>-->
+<!--            </table>-->
+
+
+<!--        </div>-->
+<!--    </div>-->
