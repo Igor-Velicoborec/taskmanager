@@ -18,9 +18,10 @@ public class DbLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        taskRepository.save(new Task("clean room", "",Priority.NORMAL,Status.IN_PROGRESS));
-        taskRepository.save(new Task("clean washroom", "",Priority.LOW,Status.CLOSED));
-        taskRepository.save(new Task("clean kitchen", "",Priority.HIGHT,Status.OPEN));
+//        taskRepository.save(new Task("clean room", "",Priority.NORMAL,Status.IN_PROGRESS));
+//        taskRepository.save(new Task("clean washroom", "",Priority.LOW,Status.CLOSED));
+//        taskRepository.save(new Task("clean kitchen", "",Priority.HIGHT,Status.OPEN));
+
 
     }
 }

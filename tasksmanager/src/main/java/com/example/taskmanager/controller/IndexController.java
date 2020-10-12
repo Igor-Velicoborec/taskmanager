@@ -16,7 +16,7 @@ public class IndexController {
         this.taskService = taskService;
     }
 
-    @RequestMapping("/tasks")
+    @RequestMapping("/tasks/all")
     public String allTasks(Model model){
        model.addAttribute("tasks",taskService.getAllTask());
        return "tasks";

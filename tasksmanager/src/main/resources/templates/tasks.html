@@ -17,7 +17,7 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th> TaskName</th>
+                    <th> TaskNam </th>
                     <th> Description</th>
                     <th> priority</th>
                     <th> status</th>
@@ -26,10 +26,10 @@
                 <tbody>
 
                 <tr th:each="task : ${tasks}">
-                    <td> th:text="${task.name}"> Name </td>
-                    <td> th:text="${task.description}"> Description </td>
-                    <td> th:text="${task.priority}"> TaskPriority </td>
-                    <td> th:text="${task.status}"> TaskStatus</td>
+                    <td th:text="${task.name}"> </td>
+                    <td th:text="${task.description}">  </td>
+                    <td th:text="${task.priority}">  </td>
+                    <td th:text="${task.status}"> </td>
                 </tr>
                 </tbody>
             </table>
