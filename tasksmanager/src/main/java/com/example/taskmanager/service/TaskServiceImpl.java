@@ -2,53 +2,53 @@ package com.example.taskmanager.service;
 
 import com.example.taskmanager.entity.Task;
 import com.example.taskmanager.repository.TaskRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 @Service
 public class TaskServiceImpl implements TaskService {
 
-    private final TaskRepository taskRepository;
     @Autowired
-    public TaskServiceImpl(TaskRepository taskRepository) {
-        this.taskRepository = taskRepository;
-    }
+  private TaskRepository taskRepository;
 
 
     @Override
-    public void createTask(Task task) {
+    public Task getById(Long id) {
+        log.info("IN TaskServiceImpl getById{}", id);
+        return taskRepository.getOne(id);
+    }
+
+    @Override
+    public void save(Task task) {
+        log.info("IN TaskServiceImpl save{}", task);
         taskRepository.save(task);
 
 
     }
 
-
-
-    public Optional getTask(long taskId) {
-
-        return taskRepository.findById(taskId) ;
-    }
-
     @Override
     public Task updateTask(Task task) {
-        return null;
+        log.info("IN TaskServiceImpl updateTask{}", task);
+        return taskRepository.saveAndFlush(task);
     }
 
     @Override
-    public void deleteTask(long taskId) {
-        taskRepository.deleteById(taskId);
+    public void deleteTask(long id) {
+        log.info("IN TaskServiceImpl deleteTask{}", id);
+        taskRepository.deleteById(id);
 
     }
 
     @Override
-        public List<Task>  getAllTask() {
+    public List<Task> getAll() {
+        log.info("IN TaskServiceImpl getAll{}");
         return taskRepository.findAll();
     }
-
-
 
 
 }

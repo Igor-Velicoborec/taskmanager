@@ -23,7 +23,7 @@ public class IndexController {
 
     @GetMapping("/tasks/all")
     public String allTasks(Model model){
-       model.addAttribute("tasks",taskService.getAllTask());
+       model.addAttribute("tasks",taskService.getAll());
        return "tasks";
    }
 
@@ -36,7 +36,7 @@ public class IndexController {
 
 
         Task task = new Task(name,description, priority,status);
-        taskService.createTask(task);
+        taskService.save(task);
         model.addAttribute("task", task);
         return "registration-success";}
 
