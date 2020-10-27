@@ -7,14 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @Slf4j
 @Service
 public class TaskServiceImpl implements TaskService {
 
     @Autowired
-  private TaskRepository taskRepository;
+    private TaskRepository taskRepository;
 
 
     @Override
@@ -27,8 +27,6 @@ public class TaskServiceImpl implements TaskService {
     public void save(Task task) {
         log.info("IN TaskServiceImpl save{}", task);
         taskRepository.save(task);
-
-
     }
 
     @Override

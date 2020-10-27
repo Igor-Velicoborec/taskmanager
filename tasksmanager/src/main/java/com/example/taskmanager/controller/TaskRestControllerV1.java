@@ -1,6 +1,4 @@
 package com.example.taskmanager.controller;
-
-
 import com.example.taskmanager.entity.Task;
 import com.example.taskmanager.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-
 import java.util.List;
 
 @RestController
@@ -25,12 +22,12 @@ public class TaskRestControllerV1 {
         this.taskService = taskService;
     }
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<Task> getTask(@PathVariable("id") Long taskId) {
-        if (taskId == null) {
+    @GetMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<Task> getTask(@PathVariable Long id) {
+        if (id == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-        Task task = taskService.getById(taskId);
+        Task task = taskService.getById(id);
         if (task == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -59,7 +56,7 @@ public class TaskRestControllerV1 {
     }
 
     @DeleteMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<Task> deleteTask(@PathVariable ("id") Long id) {
+    public ResponseEntity<Task> deleteTask(@PathVariable("id") Long id) {
         Task task = taskService.getById(id);
         if (task == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -68,7 +65,7 @@ public class TaskRestControllerV1 {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @GetMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<List<Task>> getAllTask() {
         List<Task> tasks = taskService.getAll();
 

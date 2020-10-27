@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface TaskService {
 
-      Task getById(Long id);
+    Task getById(Long id);
 
     void save(Task task);
 
