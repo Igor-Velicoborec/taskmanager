@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Task Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
 <div class="container">
@@ -17,26 +17,24 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th> Task Name </th>
+                    <th> Task Name</th>
                     <th> Description</th>
-                    <th> Priority </th>
+                    <th> Priority</th>
                     <th> Status</th>
                 </tr>
                 </thead>
                 <tbody>
 
                 <tr th:each="task : ${tasks}">
-                    <td th:text="${task.name}"> </td>
-                    <td th:text="${task.description}">  </td>
-                    <td th:text="${task.priority}">  </td>
-                    <td th:text="${task.status}"> </td>
+                    <td th:text="${task.name}"></td>
+                    <td th:text="${task.description}"></td>
+                    <td th:text="${task.priority}"></td>
+                    <td th:text="${task.status}"></td>
                 </tr>
                 </tbody>
             </table>
-
-
         </div>
     </div>
-
+</div>
 </body>
 </html>

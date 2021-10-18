@@ -21,15 +21,4 @@ public class IndexController {
         model.addAttribute("tasks", taskService.getAll());
         return "tasks";
     }
-
-
 }
-
-
-
-
-
-
-
-
-

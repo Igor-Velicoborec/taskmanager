@@ -1,7 +1,7 @@
 package com.example.taskmanager.entity;
+
 import lombok.Data;
 import javax.persistence.*;
-
 
 @Entity
 @Data
@@ -24,7 +24,6 @@ public class Task {
         this.status = status;
     }
 
-
     @Enumerated(EnumType.STRING)
     private Priority priority;
 
@@ -33,5 +32,4 @@ public class Task {
 
     public Task() {
     }
-
 }

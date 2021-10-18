@@ -1,4 +1,5 @@
 package com.example.taskmanager.controller;
+
 import com.example.taskmanager.entity.Task;
 import com.example.taskmanager.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,9 +74,5 @@ public class TaskRestControllerV1 {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(tasks, HttpStatus.OK);
-
-
     }
 }
-
-

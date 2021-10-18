@@ -8,14 +8,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
 @Slf4j
 @Service
 public class TaskServiceImpl implements TaskService {
 
     @Autowired
     private TaskRepository taskRepository;
-
 
     @Override
     public Task getById(Long id) {
@@ -47,6 +45,4 @@ public class TaskServiceImpl implements TaskService {
         log.info("IN TaskServiceImpl getAll{}");
         return taskRepository.findAll();
     }
-
-
 }
